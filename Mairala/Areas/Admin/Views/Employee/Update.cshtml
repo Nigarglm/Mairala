@@ -1,0 +1,37 @@
+﻿
+@model UpdateEmployeeVM
+
+<div class="row">
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create</h4>
+                <form class="forms-sample" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly"></div>
+                    <div class="form-group">
+                        <label asp-for="Photo">Photo</label>
+                        <input asp-for="Photo" type="text" class="form-control" id="exampleInputUsername1" placeholder="Photo">
+                        <span asp-validation-for="Photo"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" type="text" class="form-control" id="exampleInputUsername1" placeholder="Name">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Surname">Surname</label>
+                        <input asp-for="Surname" type="text" class="form-control" id="exampleInputUsername1" placeholder="Surname">
+                        <span asp-validation-for="Surname"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PositionId">Position Id</label>
+                        <input asp-for="PositionId" type="text" class="form-control" id="exampleInputUsername1" placeholder="PositionId">
+                        <span asp-validation-for="PositionId"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary me-2">Create</button>
+                    <button asp-action="index" asp-controller="home" class="btn btn-light">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

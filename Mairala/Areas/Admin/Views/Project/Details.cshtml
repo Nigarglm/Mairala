@@ -1,0 +1,13 @@
+﻿
+@model List<Project>
+
+@foreach (Project projects in Model)
+{
+        <div class="card" style="width: 18rem;">
+          <img src="~/assets/images/@projects.ImageUrl" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">@projects.Title</p>
+            <p class="card-text">@projects.Category.Name</p>
+          </div>
+        </div>
+}

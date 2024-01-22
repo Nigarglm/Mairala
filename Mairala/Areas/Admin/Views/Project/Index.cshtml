@@ -1,0 +1,46 @@
+﻿
+@model List<Project>
+
+@{
+    int count = 0;
+}
+<div class="row">
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Project Table</h4>
+                <p class="card-description">
+                    <a class="btn btn-success btn-info" asp-action="create" asp-controller="project">Create</a>
+                </p>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Settings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Project projects in Model)
+                            {
+                                count++;
+                                <tr>
+                                    <td>@count</td>
+                                    <td><img src="assets/images/@projects.ImageUrl" alt="" /></td>
+                                    <td>@projects.Title</td>
+                                    <td>
+                                        <a class="btn btn-warning btn-info" asp-action="update" asp-controller="project" asp-route-id="@projects.Id">Update</a>
+                                        <a class="btn btn-warning btn-info" asp-action="details" asp-controller="project" asp-route-id="@projects.Id">Details</a>
+                                        <a class="btn btn-warning btn-info" asp-action="delete" asp-controller="project" asp-route-id="@projects.Id">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
